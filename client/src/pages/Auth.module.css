@@ -1,0 +1,18 @@
+.authPage {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signUpSucces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    bottom: 0;
+    background-color: #FF3D59;
+    font-size: 1.5rem;
+    width: 100%;
+}

@@ -54,6 +54,22 @@ app.post("/remove/user", (req, res) => {
     })
 })
 
+app.post("/import/users", (req,res) => {
+    const sqlInsert = "LOAD DATA INFILE 'C:/Users/hejba/Desktop/FIIT STU/5.Semester/VAVJS/Zadanie_3/users.csv' INTO TABLE users FIELDS TERMINATED BY ';' IGNORE 1 ROWS;";
+    db.query(sqlInsert, (err, data) => {
+        console.log(err);
+        console.log(data);
+    })
+})
+
+app.post("/export/users", (req, res) => {
+    const sqlInsert = "SELECT * FROM users INTO OUTFILE 'C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\' FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n'";
+    db.query(sqlInsert, (err, data) => {
+        console.log(err);
+        console.log(data);
+    })
+})
+
 app.listen('3001', () => {
     console.log("Server running on port 3001");
 })

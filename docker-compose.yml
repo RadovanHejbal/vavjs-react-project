@@ -1,5 +1,12 @@
 version: "3.9"
 services:
+  mysqldb:
+    image: mysql@8.0.31
+    container_name: mysqlcontainer
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    volumes:
+      - ./dbinit/init.sql:/docker-entrypoint-initdb.d/0_init.sql
   server:
     build: server/
     ports:

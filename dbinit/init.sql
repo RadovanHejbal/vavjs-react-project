@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS vavjsdatabase;
+
+USE vavjsdatabase;
+
+DROP TABLE IS EXISTS users;
+
+CREATE TABLE users (
+    id INT NOT NULL UNIQUE AUTO INCREMENT,
+    username VARCHAR(45) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    email VARCHAR(45) NOT NULL UNIQUE,
+    age INT NOT NULL,
+    height INT NOT NULL,
+    PRIMARY KEY (id)
+)

@@ -36,6 +36,11 @@ const AddUserForm = (props) => {
       height: height.current.value,
     }).then((response) => {
         props.updateUsers();
+        login.current.value = "";
+        password.current.value = "";
+        email.current.value = "";
+        age.current.value = "";
+        height.current.value = "";
     })
   };
 

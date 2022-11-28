@@ -1,5 +1,6 @@
 .usersList {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .single {

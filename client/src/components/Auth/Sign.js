@@ -27,6 +27,9 @@ const SignUp = (props) => {
     }else if (password.current.value.trim() !== passwordRepeat.current.value.trim()) {
       alert("Wrong input! Passwords are not matching!");
       return;
+    }else if (email.current.value.indexOf("@")) {
+      alert("Wrong email!");
+      return;
     }
 
     Axios.post("http://localhost:3001/api/register", {

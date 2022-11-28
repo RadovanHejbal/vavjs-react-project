@@ -40,7 +40,7 @@ const AdminUsers = () => {
   }
 
   return (
-    <div>
+    <div className="container">
       <AddUserForm updateUsers={updateUsersHandler} />
       <h1>All Users</h1>
       <div>

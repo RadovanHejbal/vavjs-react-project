@@ -11,3 +11,29 @@ body {
 .container {
   padding: 0 64px;
 }
+
+.advertising {
+  width: 800px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.closeAd {
+  position: absolute;
+  bottom: 0;
+  right: 800px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.graph {
+  width: 1200px;
+}
+
+.methods {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+

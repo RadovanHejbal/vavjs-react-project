@@ -11,3 +11,7 @@
     flex-wrap: wrap;
     gap: 32px;
 }
+
+.formWrapper {
+    display: flex;
+}

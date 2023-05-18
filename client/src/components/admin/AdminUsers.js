@@ -8,13 +8,14 @@ const AdminUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/get/users").then((response) => {
+    Axios.get("/get/users").then((response) => {
+      console.log(response.data);
       setUsers(response.data);
     });
   }, []);
 
   const removeUserHandler = (idOfUser) => {
-    Axios.post("http://localhost:3001/remove/user", {
+    Axios.post("/remove/user", {
       idOfUser,
     }).then((response) => {
       setUsers(users.filter((user) => user.id !== idOfUser));
@@ -22,20 +23,20 @@ const AdminUsers = () => {
   };
 
   const updateUsersHandler = () => {
-    Axios.get("http://localhost:3001/get/users").then((response) => {
+    Axios.get("/get/users").then((response) => {
       setUsers(response.data);
     });
   }
 
   const importUsersHandler = () => {
-    Axios.post("http://localhost:3001/import/users", {}).then(() => {
-      updateUsersHandler();
+    Axios.post("/import/users", {}).then((response) => {
+      console.log(response);
     })
   }
 
   const exportUsersHandler = () => {
-      Axios.post("http://localhost:3001/export/users", {}).then(() => {
-        console.log("YES");
+      Axios.post("/export/users", {}).then((response) => {
+        console.log(response);
       })
   }
 
@@ -44,7 +45,7 @@ const AdminUsers = () => {
       <AddUserForm updateUsers={updateUsersHandler} />
       <h1>All Users</h1>
       <div>
-        <button onClick={importUsersHandler}>Import</button>
+        <button onClick={importUsersHandler}>Import - nefunguje</button>
         <button onClick={exportUsersHandler}>Export</button>
       </div>
       <div className={classes.usersList}>

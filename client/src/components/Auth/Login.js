@@ -18,7 +18,7 @@ const Login = (props) => {
       return;
     }
     
-    Axios.post("http://localhost:3001/api/login", {
+    Axios.post("/api/login", {
       username: login.current.value,
       password: password.current.value
     }).then((response) => {

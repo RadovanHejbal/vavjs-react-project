@@ -1,17 +1,13 @@
-# Choose the Image which has Node installed already
-FROM node:16
+FROM node:18.12.1
 
-ADD index.js /server/
+WORKDIR /usr/src/app
 
-WORKDIR /usr/src
-
-# COPY all the files from Current Directory into the Container
 COPY package*.json ./
+
+RUN npm install
 
 COPY . .
 
-# Tell that this image is going to Open a Port 
-EXPOSE 3001
+EXPOSE 8080
 
-# Default Command to launch the Application
 CMD ["node", "index.js"]

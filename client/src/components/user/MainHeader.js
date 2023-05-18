@@ -14,11 +14,16 @@ const MainHeader = (props) => {
         props.changePage("Measurements");
     }
 
+    const pageChangeMethods = () => {
+        props.changePage("Methods");
+    }
+
     return <nav className={classes.nav}>
         <h1>{authContext.username}</h1>
         <ul>
             <li className={classes.li}><button onClick={pageChangeMeasurements}>Home - measurements</button></li>
             <li className={classes.li}><button onClick={pageChangeGraphs}>Measurement Graphs</button></li>
+            <li className={classes.li}><button onClick={pageChangeMethods}>Methods</button></li>
         </ul>
         <Logout />
     </nav>

@@ -9,7 +9,7 @@ const AdminEntertainment = () => {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/get/advertising").then((response) => {
+    Axios.get("/get/advertising").then((response) => {
         setImg(response.data.image);
         setLink(response.data.link);
         setCounter(response.data.count);
@@ -17,7 +17,7 @@ const AdminEntertainment = () => {
   }, []);
 
   const setNewLinkHandler = () => {
-    Axios.post("http://localhost:3001/new-link", {
+    Axios.post("/new-link", {
         link: linkInput.current.value
     }).then((response) => {
         if(response.data === "success") {
@@ -27,7 +27,7 @@ const AdminEntertainment = () => {
   }
 
   const setNewImageHandler = () => {
-    Axios.post("http://localhost:3001/set/image", {
+    Axios.post("/set/image", {
         image: imageInput.current.value
     }).then((response) => {
         if(response.data === "success") {
@@ -45,7 +45,7 @@ const AdminEntertainment = () => {
       <button onClick={setNewLinkHandler}>Set New Link</button>
       <input ref={imageInput} type="text"></input>
       <button onClick={setNewImageHandler}>Set New Image</button>
-      <div>{counter}</div>
+      <div>How many times users clicked: {counter}</div>
     </div>
   );
 };

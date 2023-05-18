@@ -28,7 +28,7 @@ const AddUserForm = (props) => {
       return;
     }
 
-    Axios.post("http://localhost:3001/api/register", {
+    Axios.post("/api/register", {
       login: login.current.value,
       password: password.current.value,
       email: email.current.value,
